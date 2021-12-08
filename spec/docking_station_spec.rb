@@ -13,9 +13,16 @@ describe DockingStation do
 
     expect(bike.working?).to be(true)
   end
+  
+  it 'check if there is a bike docked' do
+    is_expected.to respond_to(:bike)
+  end
+  
+  it 'docks bike' do
+    docking_station = DockingStation.new
+    bike = docking_station.release_bike
+
+    expect(docking_station.dock(bike)).to be(bike)
+  end
 
 end
-
-# describe Bike do
-
-# end
