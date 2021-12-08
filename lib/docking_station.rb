@@ -10,5 +10,9 @@ class DockingStation
     @bike = bike
   end
 
+  def available?
+    fail
+  end
+
 end
 

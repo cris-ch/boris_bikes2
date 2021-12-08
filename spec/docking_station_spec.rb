@@ -25,4 +25,9 @@ describe DockingStation do
     expect(docking_station.dock(bike)).to be(bike)
   end
 
+  it 'shows an error message' do
+    docking_station = DockingStation.new
+    
+    expect { docking_station.available? }.to raise_error
+  end
 end
