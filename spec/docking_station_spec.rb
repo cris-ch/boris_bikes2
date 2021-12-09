@@ -2,10 +2,6 @@
 require 'docking_station.rb'
 require 'bike.rb'
 describe DockingStation do
-  it 'releases bike' do
-    docking_station = DockingStation.new
-    expect(docking_station.release_bike).to be_a(Bike)
-  end
 
   it 'checks if bike is working' do
     docking_station = DockingStation.new
@@ -31,6 +27,20 @@ describe DockingStation do
     docking_station.dock(bike)
     
     expect(docking_station.bike).to eq bike
+  end
+
+  it 'check if a bike should be released' do
+    docking_station = DockingStation.new
+    bike = Bike.new
+    docking_station.dock(bike)
+
+    expect(docking_station.release_bike).to eq bike
+  end
+
+  it 'check a bike is not released when there are no bikes available' do
+    docking_station = DockingStation.new
+
+    expect {docking_station.release_bike}.to raise_error 'No bikes available'
   end
 
 end
