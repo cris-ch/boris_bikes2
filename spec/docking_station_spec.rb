@@ -25,6 +25,7 @@ describe DockingStation do
     expect(docking_station.dock(bike)).to be(bike)
   end
 
+<<<<<<< HEAD
   it 'checks if there is a bike' do
     docking_station = DockingStation.new
     bike = Bike.new
@@ -33,4 +34,11 @@ describe DockingStation do
     expect(docking_station.bike).to eq bike
   end
 
+=======
+  it 'shows an error message' do
+    docking_station = DockingStation.new
+    
+    expect { docking_station.available? }.to raise_error
+  end
+>>>>>>> refs/remotes/origin/master
 end
