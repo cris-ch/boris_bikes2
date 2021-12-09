@@ -21,14 +21,6 @@ describe DockingStation do
     expect(docking_station.dock(bike)).to be(bike)
   end
 
-  it 'checks if there is a bike' do
-    docking_station = DockingStation.new
-    bike = Bike.new
-    docking_station.dock(bike)
-    
-    expect(docking_station.bike).to eq bike
-  end
-
   it 'check if a bike should be released' do
     docking_station = DockingStation.new
     bike = Bike.new
